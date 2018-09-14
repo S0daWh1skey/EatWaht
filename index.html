@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<div style="margin: 0 auto;width: 30px;">
+			<h1>今天吃什么</h1>
+		</div>
+		<div style="margin: 0 auto;width: 50%; text-align: center; margin-top: 40px;">
+			<h1 id="textcontent">&nbsp;&nbsp;&nbsp;「这顿吃什么...」</h1>
+		</div>
+		<div style="margin: 0 auto;width: 50%; text-align: center; margin-top: 40px;">
+			<button id="btn" style="
+				<!--height: 80px;-->
+				padding: 0px;
+				<!--margin-left: 5px;-->
+				 <!--width: 300px;-->
+				 font-size: 30px; 
+				 background: none; border: hidden;" onclick="javascript:show();">
+				<div id="btntext" style="font-size: 30px;">&nbsp;&nbsp;&nbsp;「想一下」<div>
+			</button>
+		</div>
+		<script type="text/javascript">
+			var flag = 0;
+
+			function show() {
+				console.log('1111');
+				if(flag == 0) {
+					document.getElementById('btntext').innerText = "想好了";
+					flag ^= 1
+				} else {
+					document.getElementById('btntext').innerText = "「想一下」";
+					flag ^= 1
+				}　　
+//				setInterval(function() {
+					setInterval(function() {　　　　
+						if(flag) {
+							var arr = ["川味水煮肉片","鱼香肉丝",
+							"毛血旺","辣炒鱿鱼丝","宫爆鸡丁","辣子鸡",
+							"泡凤爪","土豆烧排骨","辣子鸡丁","灯影牛肉","干煸牛肉丝","冬菜扣肉","开水白菜",
+							"东坡肘子","干烧鱼","宫保鸡丁","川菜回锅肉(推荐)","川辣黄瓜","麻婆豆腐","夫妻肺片",
+							"子姜鸭","锅巴肉片","香干回锅肉","嫩蛋虾仁","麻辣水煮鱼","蚂蚁上树","手撕鸡",
+							"粉蒸肉","红烧鸭","宫爆鸡丁","酸辣粉","鱼香茄子","肉末茄子","口水鸡",
+							"朝天锅","冬菇炖鸡汤","香辣猪蹄","四川泡菜","板栗红烧肉","花式麻辣小龙虾",
+							"八宝炒年糕","重庆毛血旺","烧鸡公","麻辣肉丁","火爆腰花","麻辣诱惑蛙","鱼香苦瓜",
+							"棒棒鸡","干烧鸡翅","花椒鱼片","剁椒魔芋"];
+							var i = Math.floor(Math.random() * 52);
+							document.getElementById('textcontent').innerText = arr[i];
+						}
+					}, 1)　　
+//				}, 30);
+				//				if(i==4){
+				//					i=0;
+				//				}
+				console.log(document.getElementById('btntext').innerText);
+			}
+		</script>
+	</body>
+
+</html>
